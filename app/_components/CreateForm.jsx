@@ -19,7 +19,7 @@ import moment from 'moment'
 import { Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-const PROMPT = 'On the basis of description please give me form in json with form title, form subheading, form field form name, placeholder name, and form label in Json format';
+const PROMPT = ', On the basis of description please give me form in JSON with formTitle, formHeading along with fieldName, FieldTitle, FieldType, Placeholder, label, required fields in Json format(do not put ```json at the start of it)';
 
 function CreateForm() {
     const [openDialog, setOpenDialog] = useState(false);
