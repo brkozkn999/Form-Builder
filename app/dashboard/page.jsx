@@ -1,5 +1,6 @@
 import React from 'react'
 import CreateForm from './../_components/CreateForm'
+import FormList from './_components/FormList'
 
 function page() {
     return (
@@ -8,6 +9,7 @@ function page() {
                 Dashboard
                 <CreateForm/>
             </h2>
+                <FormList/>
         </div>
     )
 }
