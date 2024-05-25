@@ -3,12 +3,12 @@ import { LibraryBig, LineChart  , MessageSquare, Shield } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Progress } from '@/components/ui/Progress'
 import Link from 'next/link'
 import { desc, eq } from 'drizzle-orm'
 import { db } from '@/configs'
 import { useUser } from '@clerk/nextjs'
 import { JsonForms } from '@/configs/schema'
+import { Progress } from '@/components/ui/progress'
 
 function SideNav() {
     const { user } = useUser();

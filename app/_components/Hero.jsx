@@ -11,15 +11,10 @@ function Hero() {
                         <strong className="font-extrabold text-primary sm:block"> In Seconds, Not Hours </strong>
                     </h1>
 
-                    <p className="mt-4 sm:text-xl/relaxed text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-                        numquam ea!
-                    </p>
-
                     <div className="mt-8 flex flex-wrap justify-center gap-4">
                         <a
                         className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-purple-900 focus:outline-none focus:ring active:bg-primary sm:w-auto"
-                        href="#">
+                        href="/dashboard">
                         + Create AI Form
                         </a>
 
