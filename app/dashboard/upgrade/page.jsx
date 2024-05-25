@@ -3,6 +3,9 @@ import React from 'react'
 function page() {
   return (
     <div className='p-10'>
+        <h2 className='font-bold text-3xl flex items-center justify-between'>
+            Upgrade
+        </h2>
         <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8">
                 <div
