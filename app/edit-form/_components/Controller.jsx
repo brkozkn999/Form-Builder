@@ -10,8 +10,9 @@ import Themes from '../data/Themes'
 import GradientBg from '../data/GradientBg'
 import { Button } from '@/components/ui/button'
 import Style from '../data/Style'
+import { Checkbox } from '@/components/ui/checkbox'
 
-function Controller({selectedTheme, selectedBackground, selectedStyle}) {
+function Controller({selectedTheme, selectedBackground, selectedStyle, setSignInRequired}) {
     const [showMore, setShowMore] = useState(6);
 
     return (
@@ -71,6 +72,9 @@ function Controller({selectedTheme, selectedBackground, selectedStyle}) {
                         </div>
                     ))}
                 </div>
+            </div>
+            <div className='flex gap-2 my-4 items-center'>
+                <Checkbox onCheckedChange={(e) => setSignInRequired(e)} /> <h2>Enable Authentication before submitting.</h2>
             </div>
         </div>
     )

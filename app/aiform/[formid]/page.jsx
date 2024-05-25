@@ -22,7 +22,6 @@ function LiveAiForm({params}) {
 
         setRecord(result[0]);
         setJsonForm(JSON.parse(result[0].jsonform));
-        console.log(result);
     }
 
     return (
@@ -40,7 +39,7 @@ function LiveAiForm({params}) {
             formId={record.id}
             />}
             <Link className='flex gap-2 items-center bg-black text-white px-3 py-1 rounded-full
-            fixed bottom-5 left-5 cursor-pointer hover:scale-105 transition-all' href={'/'}>
+            fixed bottom-5 left-5 cursor-pointer scale-75 hover:scale-90 transition-all' href={'/'}>
                 <Image src={'/logo.png'} width={50} height={50} />
                 Build Your Own AI form
             </Link>

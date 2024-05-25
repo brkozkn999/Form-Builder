@@ -15,9 +15,12 @@ import { db } from '@/configs';
 import { userResponses } from '@/configs/schema';
 import moment from 'moment';
 import { toast } from 'sonner';
+import { SignInButton, useUser } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
 
-function FormUi({ jsonForm, onFieldUpdate, deleteField, selectedTheme, editable = true, formId = 0 }) {
+function FormUi({ jsonForm, onFieldUpdate, deleteField, selectedTheme, selectedStyle, editable = true, formId = 0 }) {
 
+    const { user, isSignedIn } = useUser();
     const [formData, setFormData] = useState({});
     let formRef = useRef();
     
@@ -57,26 +60,34 @@ function FormUi({ jsonForm, onFieldUpdate, deleteField, selectedTheme, editable 
     }
 
     const onFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log(formData);
-
-        const result = await db.insert(userResponses).values({
-            jsonResponse: formData,
-            createdAt: moment().format('DD/MM/yyyy'),
-            formRef: formId
-        });
-
-        if (result) {
-            formRef.reset();
-            toast('Response Submitted Successfully!');
+        event.preventDefault();  // Prevent form submission if user is not signed in
+        if (isSignedIn) {
+            console.log(formData);
+    
+            const result = await db.insert(userResponses).values({
+                jsonResponse: formData,
+                createdAt: moment().format('DD/MM/yyyy'),
+                formRef: formId
+            });
+    
+            if (result) {
+                formRef.reset();
+                toast('Response Submitted Successfully!');
+            } else {
+                toast('Error while saving!')
+            }
         } else {
-            toast('Error while saving!')
+            toast('Please sign in first!');
         }
     }
 
     return (
-        <form ref={(e)=>formRef=e} onSubmit={onFormSubmit}
-            className='border p-5 md:w-[600px] rounded-lg' data-theme={selectedTheme}>
+        <form ref={(e) => formRef = e} onSubmit={onFormSubmit}
+            className='border p-5 md:w-[600px] rounded-lg' data-theme={selectedTheme}
+            style={{
+                boxShadow: selectedStyle?.key === 'boxshadow' && '5px 5px 0px black',
+                border: selectedStyle?.key === 'border' && selectedStyle.value
+            }}>
             <h2 className='font-bold text-center text-2xl'>{jsonForm?.formTitle}</h2>
             <h2 className='text-sm text-gray-400 text-center'>{jsonForm?.formHeading}</h2>
 
@@ -146,7 +157,13 @@ function FormUi({ jsonForm, onFieldUpdate, deleteField, selectedTheme, editable 
                     }
                 </div>
             ))}
-            <button type='submit' className='btn btn-primary'>Submit</button>
+            {!isSignedIn ? (
+                <Button type="button">
+                    <SignInButton mode='modal'>Sign In first!</SignInButton>
+                </Button>
+            ) : (
+                <button type='submit' className='btn btn-primary'>Submit</button>
+            )}
         </form>
     );
 }

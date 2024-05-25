@@ -121,8 +121,11 @@ function EditForm({ params }) {
                     }}
                     selectedStyle={(value)=>
                     {
-                        updateControllerFields(value, 'style')
-                        setSelectedStyle(value)
+                        setSelectedStyle(value);
+                        updateControllerFields(value, 'style');
+                    }}
+                    setSignInRequired={(value)=>{
+                        updateControllerFields(value, 'signInRequired')
                     }}
                     />
                     
@@ -130,7 +133,7 @@ function EditForm({ params }) {
                 <div className='md:col-span-2 border rounded-lg p-5 flex items-center justify-center'
                 style={{backgroundImage:selectedBackground}}>
                     <FormUi jsonForm={jsonForm} onFieldUpdate={onFieldUpdate}
-                    deleteField={onDeleteField} selectedTheme={selectedTheme}/>
+                    deleteField={onDeleteField} selectedTheme={selectedTheme} selectedStyle={selectedStyle}/>
                 </div>
             </div>
         </div>

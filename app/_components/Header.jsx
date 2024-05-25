@@ -11,7 +11,6 @@ function Header() {
     const path = usePathname();
     
     useEffect(()=>{
-        console.log(path)
     }, [])
 
     return !path.includes('aiform') && (

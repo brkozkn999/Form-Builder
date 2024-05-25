@@ -31,7 +31,6 @@ function CreateForm() {
     const onCreateForm=async ()=>{
         setLoading(true);
         const result = await AiChatSession.sendMessage('Description:' + userInput + PROMPT);
-        console.log(result.response.text());
 
         if (result.response.text()) {
             const resp = await db.insert(JsonForms)
@@ -41,7 +40,6 @@ function CreateForm() {
                 createdAt:moment().format('DD/MM/yyyy')
             }).returning({id:JsonForms.id});
 
-            console.log('New Form ID:', resp[0].id);
             if (resp[0].id) {
                 router.push('/edit-form/' + resp[0].id)
             }
