@@ -1,3 +1,4 @@
+import { Edit, Eye, FormInputIcon, MessageCircleReplyIcon } from 'lucide-react'
 import React from 'react'
 
 function BlogCard() {
@@ -7,7 +8,7 @@ function BlogCard() {
         <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
             <img
                 alt=""
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="/card1.png"
                 className="h-56 w-full object-cover"
             />
 
@@ -15,7 +16,10 @@ function BlogCard() {
                 <time datetime="2022-10-10" className="block text-xs text-gray-500"> 10th Oct 2022 </time>
 
                 <a href="#">
-                <h3 className="mt-0.5 text-lg text-gray-900">How to position your furniture for positivity</h3>
+                <h3 className="mt-0.5 text-lg text-gray-900">
+                    View All Forms You Have Created
+                    <Eye className='text-blue-500'/>    
+                </h3>
                 </a>
 
                 <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
@@ -29,7 +33,7 @@ function BlogCard() {
         <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
             <img
                 alt=""
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="/card2.png"
                 className="h-56 w-full object-cover"
             />
 
@@ -37,7 +41,10 @@ function BlogCard() {
                 <time datetime="2022-10-10" className="block text-xs text-gray-500"> 10th Oct 2022 </time>
 
                 <a href="#">
-                <h3 className="mt-0.5 text-lg text-gray-900">How to position your furniture for positivity</h3>
+                <h3 className="mt-0.5 text-lg text-gray-900">
+                    Edit Your Forms and Even Your Themes
+                    <Edit className='text-primary'/>
+                </h3>
                 </a>
 
                 <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
@@ -51,7 +58,7 @@ function BlogCard() {
         <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
             <img
                 alt=""
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="/card3.png"
                 className="h-56 w-full object-cover"
             />
 
@@ -59,7 +66,10 @@ function BlogCard() {
                 <time datetime="2022-10-10" className="block text-xs text-gray-500"> 10th Oct 2022 </time>
 
                 <a href="#">
-                <h3 className="mt-0.5 text-lg text-gray-900">How to position your furniture for positivity</h3>
+                <h3 className="mt-0.5 text-lg font-semibold text-gray-900">
+                    You Can Analyze the Answers by Downloading
+                    <MessageCircleReplyIcon className='text-green-500'/>
+                </h3>
                 </a>
 
                 <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
