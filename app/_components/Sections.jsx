@@ -18,9 +18,9 @@ export default function Sections() {
 
                 <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <a
-                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-purple-500/10 hover:shadow-purple-500/10"
                     href="/dashboard">
-                    <FormInputIcon className="size-10 text-pink-500" />
+                    <FormInputIcon className="size-10 text-primary" />
 
                     <h2 className="mt-4 text-xl font-bold text-white">Enter a Prompt for Your Form</h2>
 
@@ -31,10 +31,10 @@ export default function Sections() {
                 </a>
 
                 <a
-                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-purple-500/10 hover:shadow-purple-500/10"
                     href="/dashboard"
                 >
-                    <Edit className="size-10 text-pink-500" />
+                    <Edit className="size-10 text-primary" />
 
                     <h2 className="mt-4 text-xl font-bold text-white">Edit Your Forms</h2>
 
@@ -45,10 +45,10 @@ export default function Sections() {
                 </a>
 
                 <a
-                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                    className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-purple-500/10 hover:shadow-purple-500/10"
                     href="/dashboard"
                 >
-                    <Share className="size-10 text-pink-500" />
+                    <Share className="size-10 text-primary" />
 
                     <h2 className="mt-4 text-xl font-bold text-white">Share to Start Getting Responses</h2>
 
@@ -62,7 +62,7 @@ export default function Sections() {
                 <div className="mt-12 text-center">
                 <a
                     href="/dashboard"
-                    className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+                    className="inline-block rounded bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-purple-900 focus:outline-none focus:ring focus:ring-yellow-400"
                 >
                     Get Started Today
                 </a>
