@@ -113,38 +113,34 @@ function FormUi({ jsonForm, onFieldUpdate, deleteField, selectedTheme, selectedS
                                 <RadioGroup required={field?.required}>
                                     {field.options.map((item, index) => (
                                         <div className="flex items-center space-x-2" key={index}>
-                                            <RadioGroupItem value={item.label} id={item.label}
-                                                onClick={() => handleSelectChange(field.fieldName, item.label)} />
-                                            <Label htmlFor={item.label}>{item.label}</Label>
+                                            <RadioGroupItem value={item} id={item}
+                                                onClick={() => handleSelectChange(field.fieldName, item)} />
+                                            <Label htmlFor={item}>{item}</Label>
                                         </div>
                                     ))}
                                 </RadioGroup>
                             </div>
                             : field.fieldType === 'checkbox' ?
                                 <div className='my-3 w-full'>
-                                    <label className='text-xs text-gray-500'>{field?.label}</label>
+                                    <label className='text-xs text-gray-500'>{field?.fieldLabel}</label>
                                     {field?.options ? field?.options?.map((item, index) => (
-                                        <div className='flex gap-2 items-center' key={index}>
+                                        <div className='flex gap-2 mt-1 items-center' key={index}>
                                             <Checkbox required={field?.required}
-                                                onCheckedChange={(v) => handleCheckbox(field?.label, item.label, v)} />
-                                            <h2>{item.label}</h2>
+                                                onCheckedChange={(v) => handleCheckbox(field?.fieldName, item, v)} />
+                                            <Label htmlFor={item}>{item}</Label>
                                         </div>
                                     ))
                                         :
                                         <div className='flex gap-2 items-center'>
                                             <Checkbox required={field?.required} />
-                                            <h2>{field.label}</h2>
+                                            <Label htmlFor={field?.fieldLabel}>{field.fieldLabel}</Label>
                                         </div>
                                     }
-                                </div>
-                                : field.fieldType === 'tel' ?
-                                    <div className='w-full my-3'>
-                                        {/* Tel input field handling here if needed */}
-                                    </div>
+                                </div>                            
                                     :
                                     <div className='my-3 w-full'>
                                         <label className='text-xs text-gray-500'>{field.fieldLabel}</label>
-                                        <Input type={field.type} placeholder={field?.placeholder} name={field?.fieldName}
+                                        <Input type={field.fieldType} placeholder={field.placeholder} name={field?.fieldName}
                                             onChange={(e) => handleInputChange(e)} required={field?.required} />
                                     </div>
                     }
