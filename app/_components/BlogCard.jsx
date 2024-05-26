@@ -5,7 +5,7 @@ function BlogCard() {
   return (
     <div>
         <div className='grid grid-cols-3 gap-5 scale-90'>
-        <article className="overflow-hidden rounded-lg shadow-xl transition hover:shadow-2xl">
+        <article className="overflow-hidden border-2 border-gray-150 rounded-lg shadow-xl transition hover:shadow-2xl">
             <img
                 alt=""
                 src="/card1.png"
@@ -30,7 +30,7 @@ function BlogCard() {
                 </p>
             </div>
         </article>
-        <article className="overflow-hidden rounded-lg shadow-xl transition hover:shadow-2xl">
+        <article className="overflow-hidden border-2 border-gray-150 rounded-lg shadow-xl transition hover:shadow-2xl">
             <img
                 alt=""
                 src="/card2.png"
@@ -55,7 +55,7 @@ function BlogCard() {
                 </p>
             </div>
         </article>
-        <article className="overflow-hidden rounded-lg shadow-xl transition hover:shadow-2xl">
+        <article className="overflow-hidden border-2 border-gray-150 rounded-lg shadow-xl transition hover:shadow-2xl">
             <img
                 alt=""
                 src="/card3.png"
