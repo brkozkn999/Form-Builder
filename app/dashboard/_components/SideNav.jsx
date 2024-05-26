@@ -58,8 +58,8 @@ function SideNav() {
                     key={index}
                     className={`flex items-center gap-3 p-4 mb-3
                         hover:bg-primary hover:text-white rounded-lg
-                        cursor-pointer
-                        ${path === menu.path ? 'bg-primary text-white' : 'text-gray-500'}
+                        cursor-pointer transition-all
+                        ${path === menu.path ? 'bg-purple-800 text-white' : 'text-gray-500'}
                     `}>
                     <menu.icon />
                     {menu.name}
