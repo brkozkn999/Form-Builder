@@ -99,7 +99,7 @@ function EditForm({ params }) {
                     <RWebShare
                         data={{
                         text: jsonForm?.formTitle + ", Build your form in seconds with AI form builder!",
-                        url: process.env.NEXT_PUBLIC_BASE_URL + "/aiform/" + record?.id,
+                        url: process.env.NEXT_PUBLIC_BASE_URL + "aiform/" + record?.id,
                         title: jsonForm?.formHeading,
                         }}
                         onClick={() => console.log("shared successfully!")}>
